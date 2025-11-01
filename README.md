@@ -1,63 +1,87 @@
-# my-better-t-app
+# CodeSight – AI-Powered Code Intelligence System
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Next.js, Self, TRPC, and more.
+CodeSight is an intelligent developer assistant that tracks, analyzes, and understands changes across large codebases.  
+It leverages the Language Server Protocol (LSP), Model Context Protocol (MCP), and TypeSense to detect semantic diffs, suggest refactors, and maintain consistency across projects.
+
+Built with the Better-T-Stack, CodeSight combines modern TypeScript technologies for scalable, full-stack development.
+
+---
 
 ## Features
 
-- **TypeScript** - For type safety and improved developer experience
-- **Next.js** - Full-stack React framework
-- **TailwindCSS** - Utility-first CSS for rapid UI development
-- **shadcn/ui** - Reusable UI components
-- **tRPC** - End-to-end type-safe APIs
-- **Prisma** - TypeScript-first ORM
-- **PostgreSQL** - Database engine
-- **Authentication** - Better-Auth
-- **Turborepo** - Optimized monorepo build system
+- **AI-Assisted Code Intelligence** – Detect semantic diffs, analyze dependencies, and suggest intelligent refactors.
+- **LSP & MCP Integration** – Provides language-aware insights and cross-file consistency tracking.
+- **TypeSense-Powered Search** – Enables real-time, typo-tolerant indexing for precise code navigation.
+- **Type-Safe Fullstack Architecture** – Built with TypeScript, tRPC, and Prisma for end-to-end type safety.
+- **Modern UI** – Built using Next.js, TailwindCSS, and shadcn/ui for a responsive developer interface.
+- **Authentication** – Secure, session-based authentication implemented with Better-Auth.
+- **PostgreSQL Database** – Robust, scalable relational data storage.
+- **Monorepo Setup** – Managed with Turborepo for modular and optimized builds.
+
+---
+
+## Tech Stack
+
+| Layer          | Technologies                          |
+| -------------- | ------------------------------------- |
+| Frontend       | Next.js, TailwindCSS, shadcn/ui       |
+| Backend        | TypeScript, tRPC, LSP, MCP, TypeSense |
+| Database       | PostgreSQL, Prisma ORM                |
+| Authentication | Better-Auth                           |
+| DevOps         | Docker, Turborepo                     |
+| Language       | TypeScript                            |
+
+---
 
 ## Getting Started
 
-First, install the dependencies:
+### 1. Install Dependencies
 
 ```bash
 bun install
 ```
-## Database Setup
+
+### 2. Set Up Database
 
 This project uses PostgreSQL with Prisma.
 
-1. Make sure you have a PostgreSQL database set up.
-2. Update your `apps/web/.env` file with your PostgreSQL connection details.
+1. Ensure PostgreSQL is installed and running.
+2. Update your environment variables in apps/web/.env:
 
-3. Generate the Prisma client and push the schema:
+```bash
+DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/codesight"
+```
+
 ```bash
 bun db:push
 ```
 
+3. Generate the Prisma client and push the schema:
 
-Then, run the development server:
+```bash
+bun db:push
+```
+
+### 3. Run the Development Server
 
 ```bash
 bun dev
 ```
 
-Open [http://localhost:3001](http://localhost:3001) in your browser to see your fullstack application.
+Then, open http://localhost:3001
+in your browser to view the application.
 
-
-
-
-
-
-
-## Project Structure
+### Project Structure
 
 ```
-my-better-t-app/
+codesight/
 ├── apps/
-│   └── web/         # Fullstack application (Next.js)
+│ └── web/ # Fullstack Next.js application
 ├── packages/
-│   ├── api/         # API layer / business logic
-│   ├── auth/        # Authentication configuration & logic
-│   └── db/          # Database schema & queries
+│ ├── api/ # API layer with tRPC endpoints and business logic
+│ ├── auth/ # Authentication configuration and logic
+│ ├── db/ # Database schema and queries using Prisma
+│ └── lsp/ # Language Server and MCP integration modules
 ```
 
 ## Available Scripts
